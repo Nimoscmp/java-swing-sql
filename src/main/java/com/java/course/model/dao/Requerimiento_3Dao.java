@@ -19,7 +19,7 @@ import java.util.ArrayList;
  */
 public class Requerimiento_3Dao {
     public ArrayList<Requerimiento_3> requerimiento3() throws SQLException {
-        // Su código
+
         ArrayList<Requerimiento_3> respuesta = new ArrayList<Requerimiento_3>();
         Connection conexion = JDBCUtilities.getConnection();
 
@@ -27,7 +27,7 @@ public class Requerimiento_3Dao {
             String query = "SELECT l.Cargo, MAX(l.Salario) FROM Lider l GROUP BY l.Cargo HAVING MAX(l.Salario)>700000;";
             Statement statement = conexion.createStatement();
             ResultSet response = statement.executeQuery(query);
-            // Recorrer los registros en los VO específicos
+            
             while (response.next()) {
                 Requerimiento_3 req_3 = new Requerimiento_3();
                 req_3.setCargo(response.getString("Cargo"));
@@ -47,8 +47,6 @@ public class Requerimiento_3Dao {
             }
         }
 
-        // Retornar la colección de vo's
         return respuesta;
-
     }
 }

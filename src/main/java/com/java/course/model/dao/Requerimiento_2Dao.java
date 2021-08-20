@@ -18,7 +18,6 @@ import java.util.ArrayList;
  */
 public class Requerimiento_2Dao {
     public ArrayList<Requerimiento_2> requerimiento2() throws SQLException {
-        // Su código
 
         ArrayList<Requerimiento_2> respuesta = new ArrayList<Requerimiento_2>();
         Connection conexion = JDBCUtilities.getConnection();
@@ -27,7 +26,7 @@ public class Requerimiento_2Dao {
             String query = "SELECT c.Proveedor, p.Constructora, c.Pagado FROM Compra c INNER JOIN Proyecto p WHERE c.ID_Proyecto = p.ID_Proyecto AND c.Proveedor in ('Homecenter', 'JUMBO') AND c.Pagado = 'Si' AND p.Constructora LIKE '%S.A.' ORDER BY c.Proveedor;";
             Statement statement = conexion.createStatement();
             ResultSet response = statement.executeQuery(query);
-            // Recorrer los registros en los VO específicos
+            
             while (response.next()) {
                 Requerimiento_2 req_2 = new Requerimiento_2();
                 req_2.setProveedor(response.getString("Proveedor"));
@@ -47,8 +46,6 @@ public class Requerimiento_2Dao {
             }
         }
 
-        // Retornar la colección de vo's
         return respuesta;
-
     }
 }
