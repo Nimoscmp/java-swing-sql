@@ -14,6 +14,14 @@ public class Requerimiento_2 {
     private String constructora;
     private String pagado;
 
+    public Requerimiento_2() {
+    }
+
+    public Requerimiento_2(String proveedor, String constructora, String pagado) {
+        this.proveedor = proveedor;
+        this.constructora = constructora;
+        this.pagado = pagado;
+    }
 
     public String getProveedor() {
         return this.proveedor;
