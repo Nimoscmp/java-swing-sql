@@ -5,6 +5,8 @@
  */
 package com.java.course.view;
 
+import javax.swing.JComboBox;
+
 /**
  *
  * @author nicolas
@@ -27,22 +29,174 @@ public class GUIConstruction extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        SearchButton = new javax.swing.JButton();
+        Separator = new javax.swing.JSeparator();
+        OptionsTab = new javax.swing.JTabbedPane();
+        Req3 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextField1 = new javax.swing.JTextField();
+        Req1 = new javax.swing.JPanel();
+        Req2 = new javax.swing.JPanel();
+        QueryOptions = new javax.swing.JComboBox<>();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        OptionsLabel = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Proyectos Construcción");
+        setMaximumSize(new java.awt.Dimension(3000, 3000));
+        setPreferredSize(new java.awt.Dimension(700, 400));
+        setSize(new java.awt.Dimension(550, 300));
+
+        SearchButton.setBackground(new java.awt.Color(254, 254, 254));
+        SearchButton.setForeground(new java.awt.Color(254, 13, 13));
+        SearchButton.setText("Buscar");
+        SearchButton.setMargin(new java.awt.Insets(1, 3, 1, 3));
+        SearchButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SearchButtonMouseClicked(evt);
+            }
+        });
+
+        OptionsTab.setToolTipText("");
+
+        jTextField1.setText("jTextField1");
+        jScrollPane1.setViewportView(jTextField1);
+
+        javax.swing.GroupLayout Req3Layout = new javax.swing.GroupLayout(Req3);
+        Req3.setLayout(Req3Layout);
+        Req3Layout.setHorizontalGroup(
+            Req3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 637, Short.MAX_VALUE)
+        );
+        Req3Layout.setVerticalGroup(
+            Req3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
+        );
+
+        OptionsTab.addTab("Requerimiento 1", Req3);
+
+        javax.swing.GroupLayout Req1Layout = new javax.swing.GroupLayout(Req1);
+        Req1.setLayout(Req1Layout);
+        Req1Layout.setHorizontalGroup(
+            Req1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 637, Short.MAX_VALUE)
+        );
+        Req1Layout.setVerticalGroup(
+            Req1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 187, Short.MAX_VALUE)
+        );
+
+        OptionsTab.addTab("Requerimiento 2", Req1);
+
+        Req2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        Req2.setAlignmentX(0.2F);
+        Req2.setAlignmentY(0.2F);
+        Req2.setPreferredSize(new java.awt.Dimension(500, 180));
+
+        javax.swing.GroupLayout Req2Layout = new javax.swing.GroupLayout(Req2);
+        Req2.setLayout(Req2Layout);
+        Req2Layout.setHorizontalGroup(
+            Req2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 635, Short.MAX_VALUE)
+        );
+        Req2Layout.setVerticalGroup(
+            Req2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 185, Short.MAX_VALUE)
+        );
+
+        OptionsTab.addTab("Requerimiento 3", Req2);
+
+        QueryOptions.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        QueryOptions.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Proyecto", "Proveedores", "Cargo" }));
+
+        jButton2.setText("jButton2");
+
+        jButton3.setText("jButton3");
+
+        OptionsLabel.setText("Seleccione un proyecto");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(OptionsTab)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton3)
+                .addGap(18, 18, 18)
+                .addComponent(jButton2)
+                .addGap(20, 20, 20))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(QueryOptions, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(OptionsLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Separator, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SearchButton))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(Separator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(56, 56, 56))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(OptionsLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(QueryOptions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SearchButton))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)))
+                .addComponent(OptionsTab, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(jButton3))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
+
+        OptionsTab.getAccessibleContext().setAccessibleName("Requerimiento 1");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private String selectedOption () {
+        
+        String selectedValue = QueryOptions.getSelectedItem().toString();
+        
+        return selectedValue;
+    }
+    
+    private void SearchButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SearchButtonMouseClicked
+        switch(selectedOption()){
+            case "Proyecto":
+                OptionsTab.setSelectedIndex(0);
+                break;
+            case "Proveedores":
+                OptionsTab.setSelectedIndex(1);
+                break;
+            case "Cargo":
+                OptionsTab.setSelectedIndex(2);
+                break;
+            default:
+                OptionsTab.setSelectedIndex(0);
+                break;
+        }
+        
+        jTextField1.setText(selectedOption());
+    }//GEN-LAST:event_SearchButtonMouseClicked
+
+    
     /**
      * @param args the command line arguments
      */
@@ -79,5 +233,17 @@ public class GUIConstruction extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel OptionsLabel;
+    private javax.swing.JTabbedPane OptionsTab;
+    private javax.swing.JComboBox<String> QueryOptions;
+    private javax.swing.JPanel Req1;
+    private javax.swing.JPanel Req2;
+    private javax.swing.JPanel Req3;
+    private javax.swing.JButton SearchButton;
+    private javax.swing.JSeparator Separator;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
