@@ -5,7 +5,12 @@
  */
 package com.java.course.view;
 
+import com.java.course.controller.Controlador;
+import com.java.course.model.vo.Requerimiento_1;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.swing.JComboBox;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -51,7 +56,6 @@ public class GUIConstruction extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Proyectos Construcción");
         setMaximumSize(new java.awt.Dimension(3000, 3000));
-        setPreferredSize(new java.awt.Dimension(700, 400));
         setSize(new java.awt.Dimension(550, 300));
 
         SearchButton.setBackground(new java.awt.Color(254, 254, 254));
@@ -170,15 +174,7 @@ public class GUIConstruction extends javax.swing.JFrame {
             new String [] {
                 "Constructora", "Ciudad", "Banco", "Porcentaje", "Clasificación", "Fecha"
             }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
+        ));
         ScrollQuery1.setViewportView(TableQuery1);
 
         jPanel2.add(ScrollQuery1, java.awt.BorderLayout.CENTER);
@@ -307,6 +303,35 @@ public class GUIConstruction extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_SearchButtonMouseClicked
 
+    public void updateTableReq1() throws SQLException{
+        
+        Controlador controller = new Controlador();
+        
+        ArrayList<Requerimiento_1> list_1 = controller.consultarRequerimiento1();
+        
+        DefaultTableModel model = (DefaultTableModel) TableQuery1.getModel();
+        
+        while(model.getRowCount() > 0){
+            model.removeRow(0);
+        }
+        
+        int cols = model.getColumnCount();
+        
+        for(Requerimiento_1 requerimiento : list_1){
+            
+            Object[] row = new Object[cols];
+            
+            row[0] = requerimiento.getConstructora();
+            row[1] = requerimiento.getCiudad();
+            row[2] = requerimiento.getBanco();
+            row[3] = requerimiento.getPorcentaje();
+            row[4] = requerimiento.getClasificacion();
+            row[5] = requerimiento.getFecha();
+            
+            model.addRow(row);
+        }
+    }
+    
     
     /**
      * @param args the command line arguments
